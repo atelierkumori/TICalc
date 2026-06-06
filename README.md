@@ -77,11 +77,11 @@ The application is particularly focused on two integrated indices — **ETU** (U
 
 **If you use the application:**
 
-> Nagano K. 2026. *TICalc* \[Software\]. Zenodo. https://doi.org/10.5281/zenodo.XXXXXXX
+> Nagano K. 2026. *TICalc* \[Software\]. Zenodo. https://doi.org/10.5281/zenodo.20568842
 
 **If you refer to the revised ETU/OET formulae:**
 
-> Nagano K, Horikoshi T. 2026. ETU and OET: Thermal Indices for Integrated and Factor- and Segment-Resolved Evaluation. Zenodo. https://doi.org/10.5281/zenodo.YYYYYYY
+> Nagano K, Horikoshi T. 2026. ETU and OET: Thermal Indices for Integrated and Factor- and Segment-Resolved Evaluation. Zenodo. https://doi.org/10.5281/zenodo.20570988
 
 The application is based on this revision. Therefore, if you use this application in your research, please cite both mentioned above.
 
