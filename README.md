@@ -167,34 +167,54 @@ python src/main.py
 The app reads data from xls/xlsx format files and returns calculation results in the same sheet.
 See [`template.xlsx`](https://github.com/atelierkumori/TICalc/template.xlsx) file.
 
+> ⚠️ DO NOT change the sheet name "Data"
+
 1. Set each item in the SETTINGS field (Lines 1 to 7) according to the data you want to evaluate.
+
+   > ⚠️ DO NOT change the cell positions in the SETTINGS field.
+
+   | Cell | Description |
+   |------|-------------|
+   | A2 | Solar radiation: select `Include` to account for solar radiation, or `Exclude` to ignore it |
+   | A3, B3 | Latitude [°] — mandatory if A2 = `Include` |
+   | A4, B4 | Longitude [°] — mandatory if A2 = `Include` |
+   | A5 | UTC offset: Coordinated Universal Time offset [h] |
+   | A6 | Reflected solar radiation: select `Input directly` to enter values manually, or `Estimate by albedo` to calculate from albedo |
+   | A7 | Albedo [-] — mandatory if A6 = `Estimate by albedo` |
+   | G2 | Sky view factor at pyranometer [-] |
+   | G3 | Reference wind height [m] (used for wind speed correction) |
+   | G4 | Measured wind height [m] (anemometer installation height) |
+   | G5 | Convective heat transfer coefficient formula: select `Kuwabara's formula`, or `Two-node model` |
+   | G6 | Humidity metric: select `Relative humidity`, `Wet-bulb temp`, `Humidity ratio`, or `Vapor pressure` |
+   | G7 | Longwave radiation: select `Mean radiant temp`, or `Ld and Lu` (upward/downward longwave irradiance) |
+   | L2 | Contact area factor [-] — mandatory when accounting for conductive heat |
+   | L3 | Physiological source: select `Input directly` to enter values manually, or `Two-node model` to predict |
+
 2. Enter the data you want to evaluate from the 10th row onward in columns A to S. Required input items may change depending on the settings in the SETTINGS field.
 
-Precautions
-1. DO NOT change the sheet name "Data".
-2. DO NOT change the position of the cells in the SETTINGS field, the position of the data entry field headings (A8 to S9), or the order of columns A to S.
+   > ⚠️ DO NOT change the column headings (A8–S9), or the column order (A–S).
 
-| Column | Unit | Description |
-|---|---|---|
-| `date` | ymd | Date |
-| `time` | h:m:s | Time |
-| `ta` | °C | Air temperature |
-| `Humidity metric` | * | depending on G6 |
-| `vel` | m/s | Wind velocity |
-| `Kd` | W/m<sup>2</sup> | Downward solar irradiance temperature |
-| `Ku` | W/m<sup>2</sup> | Upward solar irradiance |
-| `Lu or tr` | * | Downward longwave radiation or mean radiant temp., depending on G7 |
-| `Lu` | W/m<sup>2</sup> | Upward longwave radiation, depending on G7 |
-| `αcln` | - | Net solar absorptance of cloth(s) |
-| `αskn` | - | Net solar absorptance of skin |
-| `clo` | clo | Clothing insulation |
-| `met` | met | Metabolic rate |
-| `representative air temperature` | °C | If blank, set to 0. |
-| `sky factor` | - | Enter the sky factor for the location where thermal indices are to be evaluated. Enter the same value as G2 when the location is the same as the pyranometer installation location. |
-| `Is the place shaded?` | y/n | Enter “y” to exclude direct solar radiation |
-| `tsk` | °C | Skin temperature |
-| `wettedness` | - | Wettedness |
-| `Heat loss at contact surface` | W/m<sup>2</sup> | Heat loss at contact surface |
+   | Field name | Unit | Description |
+   |---|---|---|
+   |A: `date` | ymd | Date |
+   |B: `time` | h:m:s | Time |
+   |C: `ta` | °C | Air temperature |
+   |D: `Humidity metric` | * | depending on G6 |
+   |E: `vel` | m/s | Wind velocity |
+   |F: `Kd` | W/m<sup>2</sup> | Downward solar irradiance |
+   |G: `Ku` | W/m<sup>2</sup> | Upward solar irradiance |
+   |H: `Lu or tr` | * | Downward longwave irradiance or mean radiant temp., depending on G7 |
+   |I: `Lu` | W/m<sup>2</sup> | Upward longwave radiation, depending on G7 |
+   |J: `αcln` | - | Net solar absorptance of cloth(s) |
+   |K: `αskn` | - | Net solar absorptance of skin |
+   |L: `clo` | clo | Clothing insulation |
+   |M: `met` | met | Metabolic rate |
+   |N: `representative air temperature` | °C | If blank, set to 0. |
+   |O: `sky factor` | - | Enter the sky factor for the location where thermal indices are to be evaluated. Enter the same value as G2 when the location is the same as the pyranometer installation location. |
+   |P: `Is the place shaded?` | y/n | Enter “y” to exclude direct solar radiation |
+   |Q: `tsk` | °C | Skin temperature |
+   |R: `wettedness` | - | Wettedness |
+   |S: `Heat loss at contact surface` | W/m<sup>2</sup> | Heat loss at contact surface |
 
 > A sample data is included in the [`template.xlsx`](https://github.com/atelierkumori/TICalc/template.xlsx).
 
@@ -202,10 +222,11 @@ Precautions
 
 ## Running the Application
 
-1. Launch **TICalc** (via the installer or `python main.py`).
+1. Launch **TICalc**.
 2. Click **Browse** and select your template-based xls/xlsx file.
-3. Click **Run** to start the calculation.
-4. The results of calculating the input data in columns A through S for each row of the file selected via **Browse** are displayed in columns W through AQ of the same row. If an error occurs, a message will appear in the box within the window.
+3. Close the file in Excel before proceeding.
+4. Click **Run** to start the calculation.
+5. The results of calculating the input data in columns A through S for each row of the file selected via **Browse** are displayed in columns W through AQ of the same row. If an error occurs, a message will appear in the box within the window.
 
 <!-- Add a screenshot here once available:
 ![Screenshot of AppName](docs/screenshot.png)
