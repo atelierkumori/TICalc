@@ -81,7 +81,7 @@ The application is particularly focused on two integrated indices — **ETU** (U
 
 **If you refer to the revised ETU/OET formulae:**
 
-> Nagano K, Horikoshi T. 2026. ETU and OET: Thermal Indices for Integrated and Factor- and Segment-Resolved Evaluation \[Software\]. Zenodo. https://doi.org/10.5281/zenodo.20570988
+> Nagano K, Horikoshi T. 2026. ETU and OET: Thermal Indices for Integrated and Factor- and Segment-Resolved Evaluation \[Technical Note\]. Zenodo. https://doi.org/10.5281/zenodo.20570988
 
 The application is based on this revision. Therefore, if you use this application in your research, please cite both mentioned above.
 
