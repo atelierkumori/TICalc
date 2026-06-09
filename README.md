@@ -77,7 +77,7 @@ The application is particularly focused on two integrated indices — **ETU** (U
 
 **If you use the application:**
 
-> Nagano K. 2026. *TICalc* \[Software\]. Zenodo. https://doi.org/10.5281/zenodo.20568842
+> Nagano K. 2026. TICalc: Thermal Indices Calculator \[Software\]. Zenodo. https://doi.org/10.5281/zenodo.20568842
 
 **If you refer to the revised ETU/OET formulae:**
 
